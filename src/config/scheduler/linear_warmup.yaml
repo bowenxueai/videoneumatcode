@@ -1,0 +1,10 @@
+# Linear decay with warmup
+# Uses transformers.get_scheduler("linear", ...)
+name: linear
+warmup_ratio: 0.08  # fraction of total steps for warmup
+
+
+
+
+
+

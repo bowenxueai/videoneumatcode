@@ -1,0 +1,9 @@
+# Constant learning rate (no scheduling)
+# This matches the default behavior without a scheduler
+name: constant
+
+
+
+
+
+

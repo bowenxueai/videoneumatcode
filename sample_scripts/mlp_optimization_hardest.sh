@@ -1,0 +1,1 @@
+accelerate launch src/inverse_render.py dataset@train_dataset=[matsynth_hardest] dataset@val_dataset=[matsynth_hardest10] resolution=256 batch_size=32 n_iterations=15000 ${@}

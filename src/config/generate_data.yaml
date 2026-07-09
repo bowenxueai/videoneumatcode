@@ -1,0 +1,19 @@
+save_exr: true
+save_frames: true
+n_frames: 81
+resolution: 1024
+material_name: "Wood Grid 01"
+splits: ["train", "test"]
+optix_denoiser: False
+arbitrary_maps: # possiblities: ['w_camera', 'w_light', 'uv', 'emitter_hit', 'bsdf_val', 'bsdf_pdf', 'radiance', 'emitter_val']
+  - w_camera
+  - w_light
+  - uv
+  - bsdf_val
+  - emitter_val
+  - valid_light_sample
+  - radiance
+
+only_center_mesh_instance: True
+spp: 128
+area_light: False

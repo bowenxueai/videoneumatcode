@@ -1,0 +1,27 @@
+dataset: gtcomparison_renderednew_sparse_all
+resolution: 1024
+batch_size: 32
+num_workers: 8
+
+vae_path: data/models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth
+
+# Sanity check: decode random materials after encoding to verify quality
+sanity_check: true
+sanity_check_samples: 10
+
+# Override frames_info for VAE caching (every 8th frame for 17 total frames)
+# This can be set per-dataset or globally here
+
+dataset_names: "${dataset}"
+
+date: ${now:%Y-%m-%d}
+time: ${now:%H-%M-%S}
+
+exp_name: VAE-cached-res${resolution}-${dataset_names}-bs${batch_size}
+
+out_dir: ${time}-${exp_name}
+out_root: ./outputs/${date}/${out_dir}
+
+hydra:
+  run:
+    dir: ${out_root}

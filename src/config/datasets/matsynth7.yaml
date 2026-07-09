@@ -1,0 +1,28 @@
+defaults:
+  - descriptor
+  - __self__
+
+name: matsynth7
+dataset_path: data/matsynth7/{split}/{traj}
+scene_state_path: data/matsynth7/{split}/{traj}/0_scene_state
+rep_images_path: data/matsynth7/{split}/sparse
+input_type: png
+dataset_n_frames: 129
+frames_info:
+  start: 0
+  end: 129
+  every_other: 1
+
+rep_frame_info:   
+  start: 0
+  end: 129
+  every_other: 8
+
+
+materials_info:
+  csv_path: data/matsynth7/{split}/{traj}/metadata_clean.csv
+  start: 0
+  end: null
+  every_other: 1
+  specific_list: []
+  exclude: null

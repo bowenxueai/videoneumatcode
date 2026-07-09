@@ -1,0 +1,28 @@
+defaults:
+  - descriptor
+  - __self__
+
+name: diffusion
+dataset_path: data/diffusion/{split}/{traj}
+scene_state_path: data/diffusion/{split}/{traj}/0_scene_state
+rep_images_path: data/diffusion/{split}/sparse
+input_type: video
+dataset_n_frames: 81
+frames_info:
+  start: 0
+  end: 81
+  every_other: 1
+
+rep_frame_info:   
+  start: 0
+  end: 81
+  every_other: 2
+
+
+materials_info:
+  csv_path: data/diffusion/{split}/{traj}/metadata_clean.csv
+  start: 0
+  end: null
+  every_other: 1
+  specific_list: []
+  exclude: null

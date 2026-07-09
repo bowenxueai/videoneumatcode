@@ -1,0 +1,4 @@
+# Cosine annealing with warmup - popular for transformers
+# Uses transformers.get_scheduler("cosine", ...)
+name: cosine
+warmup_ratio: 0.08  # fraction of total steps for warmup

@@ -1,0 +1,30 @@
+defaults:
+  - descriptor
+  - __self__
+
+name: matsynth8-4k
+dataset_path: data/matsynth8-4k/{split}/{traj}
+scene_state_path: data/matsynth8-4k/{split}/{traj}/0_scene_state
+rep_images_path: data/matsynth8/{split}/sparse
+input_type: png
+dataset_n_frames: 81
+frames_info:
+  start: 0
+  end: 81
+  every_other: 1
+
+rep_frame_info:   
+  start: 0
+  end: 81
+  every_other: 5
+
+
+materials_info:
+  csv_path: data/matsynth8-4k/{split}/{traj}/metadata_clean.csv
+  start: 0
+  end: null
+  every_other: 1
+  specific_list: []
+  exclude: ["Fabric Carpet 01", "Fabric Valvet 01", "1655 Fur Cow Long", "1654 Fur Cow Long", "1653 Fur Cow Long", "1652 Fur Cow Long", "1797 Bricks", "1790 Bricks", "1799 Bricks", "1802 Bricks", "1798 Bricks", "1803 Bricks", "1801 Bricks", "1793 Bricks", "1656 Fur Cow Long", "1789 Bricks", "1791 Bricks", "1795 Bricks", "1792 Bricks", "1788 Bricks", "1794 Bricks", "1807 Bricks", "1806 Bricks", "1808 Bricks", "1800 Bricks", "1796 Bricks", "87 Stone Floor", "88 Stone Floor", "89 Stone Floor", "90 Stone Floor", "91 Stone Floor", "92 Stone Floor", "93 Stone Floor", "94 Stone Floor", "95 Stone Floor", "96 Stone Floor", "97 Stone Floor", "98 Stone Floor", "99 Stone Floor", "100 Stone Floor", "101 Stone Floor", "102 Stone Floor", "103 Stone Floor", "104 Stone Floor", "105 Stone Floor", "106 Stone Floor", "107 Stone Floor", "Metal 0064", "785 Stylized Rock"]
+
+  # "Metal 0064", "785 Stylized Rock" badly rendered ...

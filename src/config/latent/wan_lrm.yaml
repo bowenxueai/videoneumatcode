@@ -1,0 +1,17 @@
+defaults:
+  - base
+  - _self_
+  - upsampler: vae
+
+
+name: wan_lrm
+
+model_path: ./data/models/Wan-AI/Wan2.1-T2V-1.3B/
+channels: 12
+resolution:  # defaulted to the dataset resolution, change if needed
+load_vae: False
+null_text_emb_path: "./data/null_text_emb.pt"
+receives_vae_latent: True
+random_init: false
+timestep: 0
+dtype: float32

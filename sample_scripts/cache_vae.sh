@@ -1,0 +1,1 @@
+accelerate launch src/cache_vae_latents.py ${@}

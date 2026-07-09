@@ -1,0 +1,17 @@
+# Dependencies for Stage A (text -> video generation) of the one-click pipeline.
+# NOTE: the diffsynth library itself is VENDORED in this repo (./diffsynth) — do NOT
+# pip-install diffsynth; the scripts put ./diffsynth on PYTHONPATH.
+#
+# Install a torch build matching your CUDA FIRST, then the rest. Validated versions
+# (our cluster used the +cu121 builds):
+torch==2.4.1
+torchvision==0.19.1
+transformers==4.49.0
+imageio==2.37.3
+imageio-ffmpeg==0.6.0
+safetensors==0.8.0
+einops==0.8.2
+modelscope==1.37.1
+ftfy==6.3.1
+accelerate==0.34.2
+numpy>=1.26

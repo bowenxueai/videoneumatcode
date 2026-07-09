@@ -1,0 +1,67 @@
+defaults:
+  - descriptor
+  - __self__
+
+name: alldiffusion
+dataset_path: data/alldiffusion/{split}/{traj}
+scene_state_path: data/alldiffusion/{split}/{traj}/0_scene_state
+rep_images_path: data/alldiffusion/{split}/sparse
+input_type: video
+dataset_n_frames: 81
+frames_info:
+  start: 0
+  end: 81
+  every_other: 1
+
+rep_frame_info:   
+  start: 0
+  end: 81
+  every_other: 5
+
+
+materials_info:
+  csv_path: data/alldiffusion/{split}/{traj}/metadata_clean.csv
+  start: 0
+  end: null
+  every_other: 1
+  specific_list: []
+  exclude: null
+    # - "4"
+    # - "46"
+    # - "134"
+    # - "167"
+    # - "169"
+    # - "333"
+    # - "336"
+    # - "448"
+    # - "447"
+    # - "446"
+    # - "445"
+    # - "657"
+    # - "720"
+    # - "719"
+    # - "836"
+    # - "848"
+    # - "854"
+    # - "861"
+    # - "874"
+    # - "894"
+    # - "895"
+    # - "905"
+    # - "989"
+    # - "1013"
+    # - "1041"
+    # - "1036"
+    # - "1038"
+    # - "1039"
+    # - "1040"
+    # - "1048"
+    # - "1047"
+    # - "1045"
+    # - "1088"
+    # - "1083"
+    # - "1090"
+    # - "1094"
+    # - "1098"
+    # - "1101"
+    # - "1124"

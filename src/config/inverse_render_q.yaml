@@ -1,0 +1,94 @@
+defaults:
+  - latent: standalone
+  - network: medium
+  - scheduler: constant
+  - _self_
+
+texture_data_root: /lustre/fsw/portfolios/nvr/users/shadadan/cache/huggingface/datasets/matsynth
+
+train_dataset: ['matsynth8_train_dense_all','matsynth8_train_sparse_all']
+val_dataset: ['matsynth8_test_dense_10','matsynth8_test_sparse_10']
+tonemapped: srgb_no_clamp
+num_workers: 8
+n_iterations: 30000
+batch_size: 1
+checkpoint_count: 5
+
+resolution: 1024
+safe_tensors: false
+checkpoint:
+  network: null
+  latent: null
+
+disable_rep_images_loading: true
+rep_frames_override: null
+
+optimize: true
+validation_video: True
+training_video: True
+shader_ball_video: False
+use_offset: True
+offset_video: ${use_offset}
+
+# Falcor BRDF query training mode (direct supervision instead of image rendering)
+use_falcor: false
+falcor:
+  log_level: error  # none, fatal, error, warn, info, debug
+  data_root: /lustre/fsw/portfolios/nvr/users/shadadan/cache/huggingface/datasets/matsynth
+  batches_per_material: 10
+  spp: 16
+  n_materials: null  # null = all materials, or set to limit (e.g., 10, 100)
+  shuffle: true
+  preload: true  # preload textures into memory (faster but uses more RAM)
+
+latent:
+  resolution: ${resolution}
+
+
+lr:
+  network: 0.001
+  latent: 0.001
+
+resume_path: null
+
+scale_lr: false
+
+trainable:
+  network: true
+  latent: true
+
+mixed_precision: "no"
+
+optimizer: Adam
+max_grad_norm: null
+grad_acc_steps: 1
+
+seed: null
+loss_func: L2
+tv_loss: null
+offset_lambda: 0.01
+
+lpips:
+  enabled: false
+  weight: 0.1
+  net: vgg
+  only_lpips: false
+
+jitter: true
+spp: 4
+
+date: ${now:%Y-%m-%d}
+time: ${now:%H-%M-%S}
+
+gradient_checkpointing: False
+gradient_checkpointing_offload: False
+
+dataset_names: ${train_dataset}
+exp_name: ${latent.name}-res${resolution}-${dataset_names}-offset_${use_offset}-TM_${tonemapped}-net_l${latent.channels}-${network.width}x${network.depth}-bs${batch_size}
+
+out_dir: ${time}-${exp_name}
+out_root: ./outputs/${date}/${out_dir}
+
+hydra:
+  run:
+    dir: ${out_root}

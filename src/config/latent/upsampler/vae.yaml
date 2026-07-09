@@ -1,0 +1,14 @@
+type: vae
+vae_path: ./data/models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth
+temporal_decoding: false
+
+# VAE addon upsampler
+addon_upsampler: false
+addon_num_upsample_stages: 1  # 1=2x (16x total), 2=4x (32x total), 3=8x (64x total)
+addon_num_res_blocks: 3
+addon_temporal_upsample: null
+addon_gradient_checkpointing: true
+
+# Gradient checkpointing for base VAE decoder (saves memory)
+vae_gradient_checkpointing: false
+random_init: false

@@ -1,0 +1,48 @@
+defaults:
+  - inverse_render
+  - override latent: wan_lrm
+  - override network: medium
+  - _self_
+
+train_dataset: [matsynth8_train_sparse_10,matsynth8_train_dense_10] #<dataset_name>_<split>_<traj>_<material_preset>
+val_dataset: [matsynth8_train_sparse_10,matsynth8_train_dense_10]
+
+n_iterations: 30000
+
+lr:
+  network: 0.001
+  latent: 0.00005
+optimizer: AdamW
+checkpoint_count: 500
+
+disable_rep_images_loading: false
+
+max_grad_norm: null
+scale_lr: false
+checkpoint:
+  network: ./outputs/2025-11-15/00-00-49-matsynth10-L2-offset_True-tonemapp_srgb_no_clamp-netsize_l12-32x2-bs1/final/model.pth
+  latent: null
+safe_tensors: true
+
+dataset:
+  rep_frame_info: 
+    start: 0
+    end: 129
+    every_other: 8
+
+random_frame: False
+
+trainable:
+  network: false
+  latent: true
+
+tv_loss: null
+offset_lambda: null
+lpips:
+  enabled: true
+
+mixed_precision: "no"
+
+latent:
+  resolution: ${resolution}
+

@@ -1,0 +1,20 @@
+accelerate launch src/inverse_render_LRM.py batch_size=4 \
+    resolution=256 \
+    train_dataset=[matsynth8_train_sparse_all,matsynth8_train_dense_all] \
+    val_dataset=[matsynth8_train_sparse_10,matsynth8_train_dense_10,matsynth8_train_sparse_hardest10,matsynth8_train_dense_hardest10,diffusion_test_sparse_all] \
+    network.min_z=0.4 \
+    mixed_precision='bf16' \
+    tv_loss=null \
+    batch_size=1 \
+    resolution=1024 \
+    n_iterations=210 \
+    gradient_checkpointing=true \
+    trainable.network=true \
+    scheduler=cosine_warmup \
+    lr.network=0.00005 \
+    lpips.enabled=true \
+    lpips.weight=0.01 \
+    latent/upsampler=vae \
+    checkpoint.network="outputs/good/dense/22977604_mlp_dense512/standalone-res256-matsynth8_train_sparse_512-matsynth8_train_dense_512-offset_True-TM_srgb_no_clamp-net_l12-64x4-bs32/mlp.pth" \
+    checkpoint.latent="outputs/good/dense/23171736_longrun_denseviews_final_256/wan_lrm-res256-matsynth8_train_sparse_all-matsynth8_train_dense_all-offset_True-TM_srgb_no_clamp-net_l12-64x4-bs4/latent_module.pth" \
+    ${@}    

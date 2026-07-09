@@ -1,0 +1,27 @@
+name: null
+split: null
+traj: null
+scene_state_path: null
+dataset_path: null
+input_type: null
+lazy_load: null
+dataset_n_frames: null
+rep_images_path: null
+frames_info:
+  start: null
+  end: null
+  every_other: null
+
+rep_frame_info:   
+  start: null
+  end: null
+  every_other: null
+
+
+materials_info:
+  csv_path: null
+  start: null
+  end: null
+  every_other: null
+  specific_list: null
+  exclude: null

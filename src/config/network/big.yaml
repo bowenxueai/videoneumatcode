@@ -1,0 +1,6 @@
+defaults:
+ - base
+ - _self_
+
+width: 128
+depth: 6

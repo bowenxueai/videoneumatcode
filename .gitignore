@@ -1,0 +1,22 @@
+# top-level scratch dirs (anchored to repo root so they don't match vendored
+# subdirs like diffsynth/core/data or diffsynth/utils/data)
+/data/
+/data_obj/
+/outputs/
+/notebooks/
+/scripts/
+/shared/
+/release_runs/
+nohup.out
+__pycache__/
+
+# consolidated external assets — never commit weights/models/container
+*.safetensors
+*.pth
+*.pt
+*.sqsh
+*.ckpt
+
+# but DO keep the small VideoNeuMat rig / null-text assets
+!assets/**
+!assets/null_text_emb.pt

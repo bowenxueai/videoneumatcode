@@ -1,0 +1,10 @@
+defaults:
+  - base
+  - _self_
+
+name: standalone
+
+channels: 12
+resolution:  # defaulted to the main config resolution, change if needed using latent.resolution=X
+num_materials:  # defaulted to the dataset number of materials, change in dataset config if needed
+receives_vae_latent: False

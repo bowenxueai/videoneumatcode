@@ -1,0 +1,10 @@
+defaults:
+  - base
+  - _self_
+
+
+name: simple_lrm
+
+channels: 12
+resolution:  # defaulted to the dataset resolution, change if needed
+receives_vae_latent: False

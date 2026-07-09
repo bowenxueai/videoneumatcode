@@ -1,0 +1,28 @@
+defaults:
+  - descriptor
+  - __self__
+
+name: matsynth8
+dataset_path: data/matsynth8/{split}/{traj}
+scene_state_path: data/matsynth8/{split}/{traj}/0_scene_state
+rep_images_path: data/matsynth8/{split}/sparse
+input_type: png
+dataset_n_frames: 81
+frames_info:
+  start: 0
+  end: 81
+  every_other: 1
+
+rep_frame_info:   
+  start: 0
+  end: 81
+  every_other: 5
+
+
+materials_info:
+  csv_path: data/matsynth8/{split}/{traj}/metadata_clean.csv
+  start: 0
+  end: null
+  every_other: 1
+  specific_list: []
+  exclude: ["Fabric Carpet 01", "Fabric Valvet 01", "1655 Fur Cow Long", "1654 Fur Cow Long", "1653 Fur Cow Long", "1652 Fur Cow Long", "1797 Bricks", "1790 Bricks", "1799 Bricks", "1802 Bricks", "1798 Bricks", "1803 Bricks", "1801 Bricks", "1793 Bricks", "1656 Fur Cow Long", "1789 Bricks", "1791 Bricks", "1795 Bricks", "1792 Bricks", "1788 Bricks", "1794 Bricks", "1807 Bricks", "1806 Bricks", "1808 Bricks", "1800 Bricks", "1796 Bricks", "87 Stone Floor", "88 Stone Floor", "89 Stone Floor", "90 Stone Floor", "91 Stone Floor", "92 Stone Floor", "93 Stone Floor", "94 Stone Floor", "95 Stone Floor", "96 Stone Floor", "97 Stone Floor", "98 Stone Floor", "99 Stone Floor", "100 Stone Floor", "101 Stone Floor", "102 Stone Floor", "103 Stone Floor", "104 Stone Floor", "105 Stone Floor", "106 Stone Floor", "107 Stone Floor", "Leather 003", "Leather 003_1303", "Leather 003_1365", "Leather 014", "Leather 014_1102", "Leather 014_1390", "Leather 013", "Leather 013_1", "Leather 013_1940", "Leather 015", "Leather 015_1643", "Leather 015_1987", "Asphalt 01", "Asphalt 01_987", "Asphalt 01_2014", "Marble 01", "Marble 01_167", "Marble 01_2285", "Leather 022", "Leather 022_938", "Leather 022_2496", "Brick Wall 04", "Brick Wall 04_2053", "Brick Wall 04_2671", "Leather 019", "Leather 019_1175", "Leather 019_2728", "Leather 018", "Leather 018_1730", "Leather 018_2788", "Leather 021", "Leather 021_1336", "Leather 021_3026", "Leather 012", "Leather 012_419", "Leather 012_3206", "Wood 04", "Wood 04_1158", "Wood 04_3299", "Leather 005", "Leather 005_559", "Leather 005_3520", "Brick Wall 21", "Brick Wall 21_1858", "Brick Wall 21_3769", "Leather 017", "Leather 017_2074", "Leather 017_3860", "Brick Wall 22", "Brick Wall 22_183", "Brick Wall 22_3982", "Leather 002", "Leather 002_2399", "Leather 002_4428", "Leather 020", "Leather 020_1950", "Leather 020_4429", "Metal Tiles 02", "Metal Tiles 02_359", "Metal Tiles 02_4584", "Leather 006", "Leather 006_2677", "Leather 006_4726", "Leather 010", "Leather 010_4856", "Leather 010_4962", "Leather 004", "Leather 004_250", "Leather 004_5040", "Leather 011", "Leather 011_3274", "Leather 011_5126", "Metal Tiles 01", "Metal Tiles 01_3247", "Metal Tiles 01_5299", "Leather 009", "Leather 009_4689", "Leather 009_5448"]
