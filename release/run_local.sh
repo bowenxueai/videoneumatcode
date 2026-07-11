@@ -31,6 +31,7 @@ while [ $# -gt 0 ]; do
 done
 [ -n "$PROMPT" ] || { echo "ERROR: give a prompt (add --i2v IMAGE for image->video). Try --help." >&2; exit 1; }
 [ -n "$INPUT_IMAGE" ] && [ ! -f "$INPUT_IMAGE" ] && { echo "ERROR: --i2v image not found: $INPUT_IMAGE" >&2; exit 1; }
+[ -n "$INPUT_IMAGE" ] && INPUT_IMAGE="$(realpath -e -- "$INPUT_IMAGE")"
 
 STAMP="$(date +%Y%m%d%H%M%S)" ; SPLIT="rel${STAMP}"
 [ -n "$RUNNAME" ] && SPLIT="rel$(echo "$RUNNAME" | tr -cd '[:alnum:]')${STAMP}"

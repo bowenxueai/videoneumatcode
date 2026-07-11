@@ -38,6 +38,9 @@ fi
 if [ -n "$INPUT_IMAGE" ] && [ ! -f "$INPUT_IMAGE" ]; then
   echo "ERROR: --i2v image not found: $INPUT_IMAGE" >&2; exit 1
 fi
+if [ -n "$INPUT_IMAGE" ]; then
+  INPUT_IMAGE="$(realpath -e -- "$INPUT_IMAGE")"
+fi
 
 # ---- run dir + split name (single token, no underscores) -------------------
 STAMP="$(date +%Y%m%d%H%M%S)"

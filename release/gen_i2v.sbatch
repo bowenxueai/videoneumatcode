@@ -15,6 +15,9 @@ set -euo pipefail
 : "${RELEASE_DIR:?}"
 source "${RELEASE_DIR}/config.env"
 : "${GEN_OUTDIR:?}" ; : "${PROMPT:?}" ; : "${INPUT_IMAGE:?}" ; : "${I2V_CKPT:?}"
+[ -f "$INPUT_IMAGE" ] || { echo "ERROR: I2V input image not found: $INPUT_IMAGE" >&2; exit 1; }
+INPUT_IMAGE="$(realpath -e -- "$INPUT_IMAGE")"
+export INPUT_IMAGE
 mkdir -p "$GEN_OUTDIR"
 
 export DIFFSYNTH_MODEL_BASE_PATH="$WAN_MODELS"
