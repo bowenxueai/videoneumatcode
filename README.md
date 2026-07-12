@@ -8,17 +8,6 @@ Bowen Xue, Saeed Hadadan, Zheng Zeng, Fabrice Rousselle, Zahra Montazeri, Milos 
 
 Official code for **VideoNeuMat**. The main pipeline is **text → neural material**: a text prompt is turned into a material video by a fine-tuned video-diffusion model, then a feed-forward LRM extracts a re-renderable neural material (BRDF + displacement) from it — in one command (see **Quick start** below).
 
-> The codebase is internally named **NeuGen**; scripts, configs, and module paths use that name.
-
----
-
-NeuGen learns neural **materials** on a flat plane from rendered data, in two flavors that are trained as a pipeline:
-
-- **MLP (per-material optimization)** — a shared neural-material decoder optimized directly on rendered data.
-- **LRM (feed-forward)** — a Large Reconstruction Model that *encodes* a material into a latent in one forward pass, then decodes it with the pre-trained MLP.
-
-The LRM input is a few **representative images** of a material (`rep_images`); it reads them as pre-encoded **VAE latents** (`rep_latents`). The repo also includes **diffusion-generated** input datasets (e.g. `diffusion`, made with a Wan video model under `src/models/diffsynth_wan_dit/`) that can be fed to the LRM in place of rendered captures — this is what the inference scripts use.
-
 ---
 
 ## Quick start — one command: text / image → neural material
