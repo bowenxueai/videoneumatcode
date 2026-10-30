@@ -23,7 +23,7 @@ PROMPT="" ; RUNNAME="" ; INPUT_IMAGE=""
 while [ $# -gt 0 ]; do
   case "$1" in
     --i2v)  INPUT_IMAGE="$2"; shift 2 ;;
-    --lora) export GEN_MODE=lora MATERIAL_CKPT="${WEIGHTS_DIR}/videoneumat/wan14b_t2v_lora/step-9000.safetensors"; shift ;;
+    --lora) export GEN_MODE=lora MATERIAL_CKPT="${WEIGHTS_DIR}/videoneumat/t2v_lora/videoneumat-t2v-lora.safetensors"; shift ;;
     --name) RUNNAME="$2"; shift 2 ;;
     -h|--help) grep '^#' "$0" | sed 's/^# \{0,1\}//'; exit 0 ;;
     *) PROMPT="$1"; shift ;;

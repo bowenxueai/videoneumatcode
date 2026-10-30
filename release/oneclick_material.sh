@@ -8,8 +8,8 @@
 # Usage:
 #   ./oneclick_material.sh "The video clip features a close-up view of <material>, <details>"
 #   ./oneclick_material.sh --prompts_csv my_prompts.csv     # T2V batch (CSV with a 'prompt' column)
-#   ./oneclick_material.sh --lora "a prompt"                # T2V with the LoRA generator (step-9000)
-#   ./oneclick_material.sh --i2v material.jpg "a prompt"    # I2V from a still image (step-9500)
+#   ./oneclick_material.sh --lora "a prompt"                # T2V with the LoRA generator
+#   ./oneclick_material.sh --i2v material.jpg "a prompt"    # I2V from a still image
 #   ./oneclick_material.sh --name myrun ...                 # name the run
 #
 # Submits two chained SLURM jobs (gen -> afterok -> extract). Prereqs & weights: see README.md
@@ -26,7 +26,7 @@ while [ $# -gt 0 ]; do
   case "$1" in
     --prompts_csv) PROMPTS_CSV_IN="$2"; shift 2 ;;
     --i2v)         INPUT_IMAGE="$2"; shift 2 ;;
-    --lora)        export GEN_MODE=lora MATERIAL_CKPT="${WEIGHTS_DIR}/videoneumat/wan14b_t2v_lora/step-9000.safetensors"; shift ;;
+    --lora)        export GEN_MODE=lora MATERIAL_CKPT="${WEIGHTS_DIR}/videoneumat/t2v_lora/videoneumat-t2v-lora.safetensors"; shift ;;
     --name)        RUNNAME="$2"; shift 2 ;;
     -h|--help)     grep '^#' "$0" | sed 's/^# \{0,1\}//'; exit 0 ;;
     *)             PROMPT="$1"; shift ;;

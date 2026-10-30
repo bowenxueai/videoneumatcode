@@ -75,12 +75,12 @@ The code reads model weights and datasets from a relative `data/` folder (the Wa
 
 The released checkpoints are on HuggingFace **[`yley/videoneumat`](https://huggingface.co/yley/videoneumat)** (fetched by `release/download_weights.sh`):
 
-- **LRM** — `lrm/latent_module.pth`: encodes a material into a latent in one feed-forward pass.
-- **Universal MLP** — `lrm/mlp.pth`: the shared neural-material decoder (kept training through the high-res stage, so it is the better universal MLP — prefer it).
+- **LRM** — `lrm/videoneumat-lrm.pth`: encodes a material into a latent in one feed-forward pass.
+- **Universal MLP** — `lrm/videoneumat-decoder.pth`: the shared neural-material decoder (kept training through the high-res stage, so it is the better universal MLP — prefer it).
 - **Material generators** (Stage A — each turns a prompt/image into an 81-frame 1024² material video that then feeds the LRM):
-  - `wan14b/step-10000.safetensors` — **T2V, full** fine-tuned Wan2.1-T2V-14B DiT. The default; run with `GEN_MODE=full`.
-  - `wan14b_t2v_lora/step-9000.safetensors` — **T2V, LoRA** on base Wan2.1-T2V-14B (293 MB). Run with `GEN_MODE=lora MATERIAL_CKPT=.../step-9000.safetensors`.
-  - `wan14b_i2v/step-9500.safetensors` — **I2V, full** fine-tuned Wan2.1-I2V-14B DiT (image→video). Needs the `Wan-AI/Wan2.1-I2V-14B` base + an input image (not wired into the one-click, which is T2V; use it with an i2v `WanVideoPipeline`).
+  - `t2v/videoneumat-t2v.safetensors` — **T2V, full** fine-tuned Wan2.1-T2V-14B DiT. The default; run with `GEN_MODE=full`.
+  - `t2v_lora/videoneumat-t2v-lora.safetensors` — **T2V, LoRA** on base Wan2.1-T2V-14B (293 MB). Run with `GEN_MODE=lora MATERIAL_CKPT=.../videoneumat-t2v-lora.safetensors`.
+  - `i2v/videoneumat-i2v.safetensors` — **I2V, full** fine-tuned Wan2.1-I2V-14B DiT (image→video). Needs the `Wan-AI/Wan2.1-I2V-14B` base + an input image (not wired into the one-click, which is T2V; use it with an i2v `WanVideoPipeline`).
 
 All three produce the same 81-pose sparse-rig material video the LRM consumes, so any of them can front the pipeline.
 
@@ -100,8 +100,8 @@ The checkpoints on [Hugging Face](https://huggingface.co/yley/videoneumat) have 
 
 | Checkpoints | License |
 |---|---|
-| `lrm/latent_module.pth`, `lrm/mlp.pth` | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) |
-| `wan14b/step-10000.safetensors`, `wan14b_t2v_lora/step-9000.safetensors`, `wan14b_i2v/step-9500.safetensors` | Apache-2.0, the same license as the upstream Wan2.1 models |
+| `lrm/videoneumat-lrm.pth`, `lrm/videoneumat-decoder.pth` | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) |
+| `t2v/videoneumat-t2v.safetensors`, `t2v_lora/videoneumat-t2v-lora.safetensors`, `i2v/videoneumat-i2v.safetensors` | Apache-2.0, the same license as the upstream Wan2.1 models |
 
 Third-party code and assets retain their original licenses. In particular, the vendored `diffsynth/` library and the DiffSynth/Wan-derived code in `src/models/diffsynth_wan_dit/` remain subject to Apache-2.0; see [diffsynth/LICENSE](diffsynth/LICENSE). Separately downloaded Wan base weights retain their upstream licenses. These components are excluded from the project's CC BY-NC 4.0 license.
 

@@ -58,23 +58,23 @@ Nothing large is committed. Obtain these once and point `config.env` at them:
    ```
    Set `WAN_MODELS` to that root (`DIFFSYNTH_MODEL_BASE_PATH`).
 3. **Material generator** — HuggingFace [`yley/videoneumat`](https://huggingface.co/yley/videoneumat). Three variants, all feed the LRM; set `MATERIAL_CKPT` (and `GEN_MODE`):
-   - `wan14b/step-10000.safetensors` — **T2V full** (default, `GEN_MODE=full`, 27 GB)
-   - `wan14b_t2v_lora/step-9000.safetensors` — **T2V LoRA** (`GEN_MODE=lora`, 293 MB, needs the Wan2.1-T2V-14B base)
-   - `wan14b_i2v/step-9500.safetensors` — **I2V full** (image→video; needs the Wan2.1-I2V-14B base + an input image; not wired into the one-click default)
-4. **NeuGen LRM checkpoints** — same repo `yley/videoneumat`: `lrm/latent_module.pth` (6 GB) + `lrm/mlp.pth`. Set `LRM_LATENT`, `LRM_MLP`.
+   - `t2v/videoneumat-t2v.safetensors` — **T2V full** (default, `GEN_MODE=full`, 27 GB)
+   - `t2v_lora/videoneumat-t2v-lora.safetensors` — **T2V LoRA** (`GEN_MODE=lora`, 293 MB, needs the Wan2.1-T2V-14B base)
+   - `i2v/videoneumat-i2v.safetensors` — **I2V full** (image→video; needs the Wan2.1-I2V-14B base + an input image; not wired into the one-click default)
+4. **NeuGen LRM checkpoints** — same repo `yley/videoneumat`: `lrm/videoneumat-lrm.pth` (6 GB) + `lrm/videoneumat-decoder.pth`. Set `LRM_LATENT`, `LRM_MLP`.
 5. **NeuGen container** — the `neugen` enroot squashfs (build from the repo's `init/Dockerfile`, or import the prebuilt image). Set `NEUGEN_CONTAINER`.
 
 > **Shortcut:** `release/download_weights.sh [DEST]` fetches items 2–4 (this project's weights + the Wan base + tokenizer) and prints the exact `config.env` values to set.
 
 > **Publishing to GitHub:** commit only `release/` (code) + the rest of the NeuGen source.
 > Keep every `.safetensors` / `.pth` / `.sqsh` out of git (they exceed GitHub's 100 MB limit).
-> Recommended: put `step-10000.safetensors` and the two LRM checkpoints in a HuggingFace model
+> Recommended: put `videoneumat-t2v.safetensors` and the two LRM checkpoints in a HuggingFace model
 > repo and link them here; the Wan base is already publicly downloadable and `diffsynth` is vendored in-repo.
 > A `download_weights.sh` that wraps the `huggingface-cli` commands above is the friendliest touch.
 
 ## License
 
-The original VideoNeuMat code and the LRM checkpoints (`lrm/latent_module.pth` and `lrm/mlp.pth`) are licensed under the **Creative Commons Attribution NonCommercial 4.0 International (CC BY-NC 4.0) license**. The material-generator checkpoints in `wan14b/`, `wan14b_t2v_lora/`, and `wan14b_i2v/` retain **Apache-2.0**, the same license as the upstream Wan2.1 models. Third-party code and separately downloaded base weights retain their original licenses. See the [repository license section](../README.md#license) for the full scope and exceptions.
+The original VideoNeuMat code and the LRM checkpoints (`lrm/videoneumat-lrm.pth` and `lrm/videoneumat-decoder.pth`) are licensed under the **Creative Commons Attribution NonCommercial 4.0 International (CC BY-NC 4.0) license**. The material-generator checkpoints in `t2v/`, `t2v_lora/`, and `i2v/` retain **Apache-2.0**, the same license as the upstream Wan2.1 models. Third-party code and separately downloaded base weights retain their original licenses. See the [repository license section](../README.md#license) for the full scope and exceptions.
 
 ## How it works
 

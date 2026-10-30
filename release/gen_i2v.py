@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Image-to-video material generation with the fine-tuned Wan2.1-I2V-14B DiT (step-9500).
+"""Image-to-video material generation with the fine-tuned Wan2.1-I2V-14B DiT.
 A material still + a prompt -> an 81-frame 1024x1024 material video that feeds the LRM.
 Models resolve under DIFFSYNTH_MODEL_BASE_PATH (Wan-AI/Wan2.1-I2V-14B-720P for the base,
 Wan-AI/Wan2.1-T2V-1.3B for the umt5 tokenizer). Uses the vendored ./diffsynth via PYTHONPATH.
@@ -13,7 +13,7 @@ from diffsynth.pipelines.wan_video import WanVideoPipeline, ModelConfig
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--ckpt", required=True, help="fine-tuned I2V DiT (step-9500.safetensors)")
+    ap.add_argument("--ckpt", required=True, help="fine-tuned I2V DiT (videoneumat-i2v.safetensors)")
     ap.add_argument("--image", required=True, help="input material still image")
     ap.add_argument("--prompt", default="")
     ap.add_argument("--out", required=True)
