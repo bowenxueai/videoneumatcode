@@ -92,6 +92,21 @@ Training the MLP/LRM, the SLURM cluster launchers, running the LRM on your own v
 
 ---
 
+## License
+
+Copyright (c) 2026 Bowen Xue.
+
+The original VideoNeuMat code is licensed under the **Creative Commons Attribution NonCommercial 4.0 International (CC BY-NC 4.0) license**. See [LICENSE](LICENSE) for the full terms.
+
+The checkpoints on [Hugging Face](https://huggingface.co/yley/videoneumat) have the following licenses:
+
+| Checkpoints | License |
+|---|---|
+| `lrm/latent_module.pth`, `lrm/mlp.pth` | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) |
+| `wan14b/step-10000.safetensors`, `wan14b_t2v_lora/step-9000.safetensors`, `wan14b_i2v/step-9500.safetensors` | Apache-2.0, the same license as the upstream Wan2.1 models |
+
+Third-party code and assets retain their original licenses. In particular, the vendored `diffsynth/` library and the DiffSynth/Wan-derived code in `src/models/diffsynth_wan_dit/` remain subject to Apache-2.0; see [diffsynth/LICENSE](diffsynth/LICENSE). Separately downloaded Wan base weights retain their upstream licenses. These components are excluded from the project's CC BY-NC 4.0 license.
+
 ## Citation
 
 ```bibtex

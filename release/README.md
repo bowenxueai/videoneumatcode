@@ -72,6 +72,10 @@ Nothing large is committed. Obtain these once and point `config.env` at them:
 > repo and link them here; the Wan base is already publicly downloadable and `diffsynth` is vendored in-repo.
 > A `download_weights.sh` that wraps the `huggingface-cli` commands above is the friendliest touch.
 
+## License
+
+The original VideoNeuMat code and the LRM checkpoints (`lrm/latent_module.pth` and `lrm/mlp.pth`) are licensed under the **Creative Commons Attribution NonCommercial 4.0 International (CC BY-NC 4.0) license**. The material-generator checkpoints in `wan14b/`, `wan14b_t2v_lora/`, and `wan14b_i2v/` retain **Apache-2.0**, the same license as the upstream Wan2.1 models. Third-party code and separately downloaded base weights retain their original licenses. See the [repository license section](../README.md#license) for the full scope and exceptions.
+
 ## How it works
 
 - **Stage A** (`gen_video.sbatch`) runs `gen_material_video.py --mode full --ckpt $MATERIAL_CKPT`
