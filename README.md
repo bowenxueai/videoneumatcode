@@ -2,7 +2,7 @@
 
 **SIGGRAPH 2026**
 
-Bowen Xue, Saeed Hadadan, Zheng Zeng, Fabrice Rousselle, Zahra Montazeri, Milos Hasan
+Bowen Xue*, Saeed Hadadan*, Zheng Zeng, Fabrice Rousselle, Zahra Montazeri, Milos Hasan
 
 **[Project Page](https://bowenxueai.github.io/VideoNeuMat/) · [Paper](https://github.com/bowenxueai/VideoNeuMat/releases/download/full-resolution/VideoNeuMat_SIG_2026_full_resolution.pdf) · [Supplementary](https://bowenxueai.github.io/VideoNeuMat/assets/supplementary_web.pdf) · [Video](https://bowenxueai.github.io/VideoNeuMat/assets/neumat_overview.mp4)**
 
