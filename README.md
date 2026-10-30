@@ -94,8 +94,6 @@ Training the MLP/LRM, the SLURM cluster launchers, running the LRM on your own v
 
 ## License
 
-Copyright (c) 2026 Bowen Xue.
-
 The original VideoNeuMat code is licensed under the **Creative Commons Attribution NonCommercial 4.0 International (CC BY-NC 4.0) license**. See [LICENSE](LICENSE) for the full terms.
 
 The checkpoints on [Hugging Face](https://huggingface.co/yley/videoneumat) have the following licenses:
