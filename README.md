@@ -8,6 +8,10 @@ Bowen Xue, Saeed Hadadan, Zheng Zeng, Fabrice Rousselle, Zahra Montazeri, Milos 
 
 Official code for **VideoNeuMat**. The main pipeline is **text → neural material**: a text prompt is turned into a material video by a fine-tuned video-diffusion model, then a feed-forward LRM extracts a re-renderable neural material (BRDF + displacement) from it — in one command (see **Quick start** below).
 
+[![VideoNeuMat teaser: generated materials and their reconstructed, re-renderable appearances](assets/teaser.jpg)](https://bowenxueai.github.io/VideoNeuMat/)
+
+[Watch the overview video](https://bowenxueai.github.io/VideoNeuMat/assets/neumat_overview.mp4)
+
 ---
 
 ## Quick start — one command: text / image → neural material
