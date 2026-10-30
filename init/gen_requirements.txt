@@ -15,3 +15,5 @@ modelscope==1.37.1
 ftfy==6.3.1
 accelerate==0.34.2
 numpy>=1.26
+pandas==2.2.3
+peft==0.14.0
