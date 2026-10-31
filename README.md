@@ -84,7 +84,7 @@ The released checkpoints are on HuggingFace **[`yley/videoneumat`](https://huggi
 - **Material generators** (Stage A — each turns a prompt/image into an 81-frame 1024² material video that then feeds the LRM):
   - `t2v/videoneumat-t2v.safetensors` — **T2V, full** fine-tuned Wan2.1-T2V-14B DiT. The default; run with `GEN_MODE=full`.
   - `t2v_lora/videoneumat-t2v-lora.safetensors` — **T2V, LoRA** on base Wan2.1-T2V-14B (293 MB). Run with `GEN_MODE=lora MATERIAL_CKPT=.../videoneumat-t2v-lora.safetensors`.
-  - `i2v/videoneumat-i2v.safetensors` — **I2V, full** fine-tuned Wan2.1-I2V-14B DiT (image→video). Needs the `Wan-AI/Wan2.1-I2V-14B` base + an input image (not wired into the one-click, which is T2V; use it with an i2v `WanVideoPipeline`).
+  - `i2v/videoneumat-i2v.safetensors` — **I2V, full** fine-tuned Wan2.1-I2V-14B DiT (image→video). Requires the `Wan-AI/Wan2.1-I2V-14B-720P` base and an input image. The pipeline defaults to T2V; select I2V with `--i2v material.jpg "<prompt>"` in either `release/oneclick_material.sh` or `release/run_local.sh`.
 
 All three produce the same 81-pose sparse-rig material video the LRM consumes, so any of them can front the pipeline.
 

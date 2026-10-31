@@ -60,7 +60,7 @@ Nothing large is committed. Obtain these once and point `config.env` at them:
 3. **Material generator** — HuggingFace [`yley/videoneumat`](https://huggingface.co/yley/videoneumat). Three variants, all feed the LRM; set `MATERIAL_CKPT` (and `GEN_MODE`):
    - `t2v/videoneumat-t2v.safetensors` — **T2V full** (default, `GEN_MODE=full`, 27 GB)
    - `t2v_lora/videoneumat-t2v-lora.safetensors` — **T2V LoRA** (`GEN_MODE=lora`, 293 MB, needs the Wan2.1-T2V-14B base)
-   - `i2v/videoneumat-i2v.safetensors` — **I2V full** (image→video; needs the Wan2.1-I2V-14B base + an input image; not wired into the one-click default)
+   - `i2v/videoneumat-i2v.safetensors` — **I2V full** (image→video; requires the Wan2.1-I2V-14B-720P base and an input image). The pipeline defaults to T2V; select I2V with `--i2v material.jpg "<prompt>"` in either `oneclick_material.sh` or `run_local.sh`.
 4. **NeuGen LRM checkpoints** — same repo `yley/videoneumat`: `lrm/videoneumat-lrm.pth` (6 GB) + `lrm/videoneumat-decoder.pth`. Set `LRM_LATENT`, `LRM_MLP`.
 5. **NeuGen container** — the `neugen` enroot squashfs (build from the repo's `init/Dockerfile`, or import the prebuilt image). Set `NEUGEN_CONTAINER`.
 
